@@ -9,6 +9,40 @@ function updateProgress() {
 addEventListener('scroll', updateProgress, { passive: true });
 updateProgress();
 
+const story = document.querySelector('.manifesto');
+const storySteps = [...document.querySelectorAll('[data-story-step]')];
+const storyDots = [...document.querySelectorAll('.story-progress i')];
+const scrollVideos = [...document.querySelectorAll('[data-scroll-video]')];
+let storyTicking = false;
+
+function updateStory() {
+  storyTicking = false;
+  if (!story) return;
+  const rect = story.getBoundingClientRect();
+  const distance = Math.max(1, story.offsetHeight - innerHeight);
+  const progressValue = Math.min(1, Math.max(0, -rect.top / distance));
+  const activeStep = Math.min(2, Math.floor(progressValue * 3));
+  story.style.setProperty('--story-progress', progressValue.toFixed(3));
+  storySteps.forEach((step, index) => step.classList.toggle('active', index === activeStep));
+  storyDots.forEach((dot, index) => dot.classList.toggle('active', index === activeStep));
+  scrollVideos.forEach((video, index) => {
+    if (!video.duration || reduceMotion) return;
+    const offsetProgress = Math.min(1, Math.max(0, progressValue * 1.35 - index * .18));
+    const nextTime = offsetProgress * Math.max(.1, video.duration - .08);
+    if (Math.abs(video.currentTime - nextTime) > .04) video.currentTime = nextTime;
+  });
+}
+
+function requestStoryUpdate() {
+  if (storyTicking) return;
+  storyTicking = true;
+  requestAnimationFrame(updateStory);
+}
+addEventListener('scroll', requestStoryUpdate, { passive: true });
+addEventListener('resize', requestStoryUpdate);
+scrollVideos.forEach((video) => video.addEventListener('loadedmetadata', requestStoryUpdate));
+updateStory();
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {

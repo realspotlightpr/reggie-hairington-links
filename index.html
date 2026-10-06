@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;900&family=Shrikhand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261006-2">
+  <link rel="stylesheet" href="styles.css?v=20261006-3">
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -49,37 +49,19 @@
     <section class="manifesto" id="world" aria-labelledby="world-title">
       <div class="manifesto-copy">
         <p class="section-no">01 / THE REGGIE EFFECT</p>
-        <h2 id="world-title">You don't need permission to <em>enter the room.</em></h2>
-        <p>Most people wait to feel confident. Reggie puts on the outfit, fixes the posture, and lets confidence catch up.</p>
-        <p class="signature">— Uncle Reggie</p>
-      </div>
-      <div class="reggie-roadmap reveal" aria-label="Getting started with the Uncle Reggie method">
-        <figure class="roadmap-photo">
-          <img src="assets/reggie-beach-hero.png" alt="Uncle Reggie walking confidently toward the camera beside the ocean">
-          <figcaption>Getting started,<br><strong>the Reggie way.</strong></figcaption>
-        </figure>
-        <div class="roadmap-drawing">
-          <svg class="roadmap-line" viewBox="0 0 900 170" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M75 78 C190 10 235 145 365 83 S555 15 675 82 S790 132 850 74"/>
-          </svg>
-          <ol class="roadmap-steps">
-            <li>
-              <span class="step-number">01</span>
-              <strong>Show up</strong>
-              <p>Pick the room. Put on the outfit. Enter before doubt catches up.</p>
-            </li>
-            <li>
-              <span class="step-number">02</span>
-              <strong>Stand out</strong>
-              <p>Fix the posture. Say the thing. Give them something to remember.</p>
-            </li>
-            <li>
-              <span class="step-number">03</span>
-              <strong>Take over</strong>
-              <p>Make the move. Own the moment. Leave before you over-explain.</p>
-            </li>
-          </ol>
+        <h2 id="world-title">Confidence is easier when you <em>stop rehearsing.</em></h2>
+        <div class="story-steps" aria-live="polite">
+          <article class="story-step active" data-story-step="0"><span>01</span><p class="story-kicker">First, interrupt the ordinary.</p><h3>Show up before your excuses do.</h3><p>Pick the room. Put on the outfit. Walk in like someone already saved you a seat.</p></article>
+          <article class="story-step" data-story-step="1"><span>02</span><p class="story-kicker">Then, make it memorable.</p><h3>Give them one thing they can’t unsee.</h3><p>The posture. The mustache. The move. You do not need ten tricks—just one unmistakable signal.</p></article>
+          <article class="story-step" data-story-step="2"><span>03</span><p class="story-kicker">Finally, prove it in motion.</p><h3>Take the moment before it takes you.</h3><p>Make the move, own the reaction, and leave them wondering where Uncle Reggie learned to dance.</p></article>
         </div>
+        <div class="story-progress" aria-hidden="true"><i class="active"></i><i></i><i></i></div>
+      </div>
+      <div class="phone-stage" aria-label="Two Reggie video examples that animate as you scroll">
+        <div class="motion-orbit" aria-hidden="true"></div>
+        <figure class="phone phone-one"><div class="phone-speaker" aria-hidden="true"></div><video muted playsinline preload="metadata" poster="assets/reggie-portrait.png" data-scroll-video><source src="assets/reggie-hero.mp4" type="video/mp4"></video><figcaption><span>THE ENTRANCE</span><strong>Show up.</strong></figcaption></figure>
+        <figure class="phone phone-two"><div class="phone-speaker" aria-hidden="true"></div><video muted playsinline preload="metadata" poster="assets/reggie-portrait.png" data-scroll-video><source src="assets/reggie-reel.mp4" type="video/mp4"></video><figcaption><span>THE PAYOFF</span><strong>Take over.</strong></figcaption></figure>
+        <p class="scroll-director" aria-hidden="true">Scroll to direct Reggie <b>↓</b></p>
       </div>
     </section>
 
@@ -171,6 +153,6 @@
     <video controls playsinline poster="assets/reggie-portrait.png"><source src="assets/reggie-reel.mp4" type="video/mp4"></video>
   </dialog>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20261006-3"></script>
 </body>
 </html>
