@@ -27,8 +27,8 @@ function updateStory() {
   storyDots.forEach((dot, index) => dot.classList.toggle('active', index === activeStep));
   scrollVideos.forEach((video, index) => {
     if (!video.duration || reduceMotion) return;
-    const offsetProgress = Math.min(1, Math.max(0, progressValue * 1.35 - index * .18));
-    const nextTime = offsetProgress * Math.max(.1, video.duration - .08);
+    const offsetProgress = Math.min(index ? .78 : .9, Math.max(0, progressValue * 1.35 - index * .18));
+    const nextTime = offsetProgress * video.duration;
     if (Math.abs(video.currentTime - nextTime) > .04) video.currentTime = nextTime;
   });
 }
