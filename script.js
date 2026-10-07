@@ -53,24 +53,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.14 });
 document.querySelectorAll('.reveal').forEach((item) => revealObserver.observe(item));
 
-const confidence = document.querySelector('#confidence');
-const output = document.querySelector('#confidence-output');
-const message = document.querySelector('#confidence-message');
-const confidenceLines = [
-  [35, 'A tasteful amount of presence.'],
-  [65, 'The room has noticed.'],
-  [85, 'Someone just moved aside.'],
-  [101, 'FULL REGGIE. No notes.']
-];
-function setConfidence() {
-  const value = Number(confidence.value);
-  root.style.setProperty('--confidence', value / 100);
-  output.value = `${value}%`;
-  message.textContent = confidenceLines.find(([limit]) => value < limit)[1];
-}
-confidence.addEventListener('input', setConfidence);
-setConfidence();
-
 const film = document.querySelector('#film');
 const filmVideo = film.querySelector('video');
 document.querySelectorAll('[data-open-film]').forEach((button) => button.addEventListener('click', () => {
