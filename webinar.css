@@ -1,0 +1,85 @@
+:root{--green:#082f29;--orange:#ff6800;--cream:#f4ecd9;--ink:#11110f;--pad:clamp(1.2rem,5vw,5rem)}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+.grain{position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.brand{font-family:Shrikhand,serif;font-size:1.55rem;font-style:italic;color:var(--cream);letter-spacing:-.04em}
+.brand span{color:var(--orange)}
+.webinar-nav{position:absolute;z-index:5;top:0;left:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:1.5rem var(--pad);color:var(--cream)}
+.webinar-nav p{margin:0;font-size:.68rem;font-weight:900;letter-spacing:.15em}
+.webinar-nav p span{color:var(--orange);margin:0 .4rem}
+.eyebrow{margin:0 0 1rem;font-size:.72rem;font-weight:900;letter-spacing:.2em;text-transform:uppercase}
+.webinar-hero{min-height:100svh;padding:9rem var(--pad) 5rem;background:var(--green);color:var(--cream);display:grid;grid-template-columns:minmax(0,1fr) minmax(270px,.34fr);gap:7vw;align-items:end;position:relative;overflow:hidden}
+.webinar-hero::before{content:"";position:absolute;width:52vw;aspect-ratio:1;border:2px dashed #ffffff26;border-radius:50%;right:-12vw;top:-15vw}
+.hero-copy{position:relative;z-index:1}
+.hero-copy h1,.watch h2,.learn h2,.final-cta h2{font-family:Shrikhand,serif;font-weight:400;letter-spacing:-.025em}
+.hero-copy h1{max-width:1100px;margin:.4rem 0 1.4rem;font-size:clamp(3.8rem,5.2vw,6.6rem);line-height:.9}
+.hero-copy h1 em{color:var(--orange);font-style:normal}
+.hero-lead{max-width:690px;font-size:clamp(1.05rem,1.7vw,1.35rem);line-height:1.55;color:#f4ecd9d4}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:1.4rem;min-height:3.7rem;margin-top:1.4rem;padding:0 1.45rem;border-radius:999px;font-weight:900;transition:transform .25s,background .25s}
+.button:hover{transform:translateY(-3px)}
+.button-orange{background:var(--orange);color:white}
+.button-dark{background:var(--ink);color:white}
+.microcopy{font-size:.72rem;color:#ffffff9c;letter-spacing:.06em}
+.hero-mark{position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:.8rem 1rem;padding-bottom:1rem}
+.hero-mark span{font-family:Shrikhand;font-size:2.1rem;color:var(--orange)}
+.hero-mark b{font-size:.75rem;letter-spacing:.18em}
+.hero-mark i{grid-column:1/-1;border-top:1px solid #ffffff3d}
+.watch{padding:8rem var(--pad);background:var(--orange);display:grid;grid-template-columns:minmax(280px,.62fr) minmax(460px,1.38fr);gap:7vw;align-items:center}
+.watch-heading h2{font-size:clamp(3.2rem,5.5vw,6.4rem);line-height:.92;margin:.4rem 0 1.5rem}
+.watch-heading>p:last-child{max-width:32rem;font-size:1.08rem;line-height:1.6}
+.video-shell{margin:0;position:relative;background:#000;box-shadow:20px 20px 0 var(--ink);overflow:hidden}
+.video-shell video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.video-shell figcaption{position:absolute;left:1.5rem;bottom:1.4rem;color:white;text-shadow:0 2px 12px #000}
+.video-shell figcaption span{display:block;font-size:.6rem;font-weight:900;letter-spacing:.16em}
+.video-shell figcaption strong{display:block;margin-top:.3rem;font-family:Shrikhand;font-size:clamp(1.3rem,2.2vw,2rem);font-weight:400}
+.learn{padding:8rem var(--pad);background:var(--cream)}
+.learn header{display:grid;grid-template-columns:.36fr 1fr;gap:3rem;align-items:start;margin-bottom:4rem}
+.learn header .eyebrow{color:var(--orange);padding-top:1rem}
+.learn h2{font-size:clamp(3.4rem,6.2vw,7rem);line-height:.92;max-width:1050px;margin:0}
+.lesson-list{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.lesson-list li{display:grid;grid-template-columns:6rem minmax(0,1fr);gap:2rem;padding:2rem 0;border-bottom:1px solid #1115}
+.lesson-list li>span{font-family:Shrikhand;font-size:2.3rem;color:var(--orange)}
+.lesson-list p{margin:0 0 .45rem;color:var(--orange);font-size:.68rem;font-weight:900;letter-spacing:.16em}
+.lesson-list h3{margin:0;font-family:Shrikhand;font-size:clamp(1.8rem,3vw,3.3rem);font-weight:400;line-height:1}
+.lesson-list small{display:block;margin-top:.8rem;max-width:700px;font-size:.95rem;line-height:1.5;color:#111b}
+.final-cta{padding:8rem var(--pad);background:var(--orange);text-align:center}
+.final-cta h2{font-size:clamp(3.5rem,7.5vw,8.5rem);line-height:.9;margin:.4rem auto 1.7rem;max-width:1200px}
+.final-cta h2 em{font-style:normal;color:var(--cream)}
+.final-cta>p:not(.eyebrow){max-width:640px;margin:0 auto;font-size:1.15rem;line-height:1.6}
+.final-cta small{display:block;margin-top:1.1rem;font-size:.72rem;font-weight:700}
+footer{padding:2rem var(--pad);background:var(--ink);color:var(--cream);display:flex;align-items:center;justify-content:space-between;gap:2rem;font-size:.78rem}
+footer p{margin:0}
+footer>a:last-child{font-weight:900;color:var(--orange)}
+
+@media(max-width:800px){.webinar-nav{padding:1.1rem}
+.webinar-nav p{font-size:.56rem}
+.webinar-hero{min-height:auto;padding:8rem 1.1rem 4.5rem;display:block}
+.webinar-hero::before{width:110vw;right:-55vw}
+.hero-copy h1{font-size:clamp(3.2rem,15vw,5.2rem)}
+.hero-lead{font-size:1rem}
+.hero-mark{margin-top:4rem;grid-template-columns:auto 1fr}
+.watch{padding:5.5rem 1.1rem;display:flex;flex-direction:column;align-items:stretch}
+.watch-heading h2{font-size:3.4rem}
+.video-shell{box-shadow:9px 9px 0 var(--ink)}
+.video-shell figcaption{left:1rem;bottom:.9rem}
+.video-shell figcaption strong{font-size:1.05rem}
+.learn{padding:5.5rem 1.1rem}
+.learn header{display:block;margin-bottom:2.5rem}
+.learn h2{font-size:3.45rem}
+.lesson-list li{grid-template-columns:3.2rem 1fr;gap:.8rem;padding:1.65rem 0}
+.lesson-list li>span{font-size:1.7rem}
+.lesson-list h3{font-size:1.8rem}
+.final-cta{padding:6rem 1.1rem}
+.final-cta h2{font-size:clamp(3.4rem,15vw,5rem)}
+.button{width:100%;text-align:center}
+.microcopy{text-align:center}
+footer{align-items:flex-start;flex-direction:column;padding:2rem 1.1rem}
+}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+.button{transition:none}
+}
